@@ -1,3 +1,25 @@
+@import 'colors';
+
+.title-section{
+  padding-top: 100px;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+
 .title {
   color: black;
+  font-size: 24px;
+  font-weight: 300;
+  position: relative;
+
+  &::before {
+    content: url("assets/triangle.svg");
+    height: 150px;
+    width: 75px;
+    position: absolute;
+    left: -56px;
+    top: -40px;
+    z-index: -1;
+    }
 }
