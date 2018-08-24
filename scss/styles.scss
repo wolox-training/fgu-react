@@ -1,16 +1,13 @@
-@import 'colors';
+@import 'variables';
 
 .title-section{
-  padding-top: 100px;
-  padding-left: 200px;
-  padding-right: 200px;
-  padding-bottom: 60px;
+  padding: 100px 200px 60px;
 }
 
 
 .title {
   color: black;
-  font-size: 24px;
+  font-size: $text-lg;
   font-weight: 300;
   position: relative;
 
@@ -22,5 +19,5 @@
     left: -56px;
     top: -40px;
     z-index: -1;
-    }
+  }
 }
