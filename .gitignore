@@ -1,2 +1,5 @@
 application.css.map
 application.css
+.sass-cache
+scss/*.css
+scss/*.map
