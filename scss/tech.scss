@@ -10,9 +10,6 @@
 
 
 .tech-block{
-  transition: margin-top 0.5s ease;
-  transition: margin-left 0.5s ease;
-
   border-color: $green;
   border-style: solid;
   border-radius: 5px;
@@ -32,6 +29,9 @@
   z-index: 0;
 
   &::before {
+    transition: top 0.5s ease;
+    transition: left 0.5s ease;
+
     background-color: $green;
     border-radius: 5px;
     content: "";
@@ -44,12 +44,13 @@
     width: 100%;
     z-index: -1;
   }
+
+  &:hover::before {
+    top: -10px;
+    left: -10px;
+  }
 }
 
-.tech-block:hover {
-  margin-top: 50px;
-  margin-left: 50px;
-}
 
 .tech-name{
   font-size: $text-md;
