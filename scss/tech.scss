@@ -9,9 +9,14 @@
 }
 
 
-.tech-block{
-  border-color: $green;
-  border-style: solid;
+.tech-img {
+  height: 100px;
+  width: 100px;
+}
+
+
+.tech-block {
+  border: 1px solid $green;
   border-radius: 5px;
 
   display: flex;
