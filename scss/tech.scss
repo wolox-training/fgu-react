@@ -1,9 +1,8 @@
-.tech-block{
-  border-color: $green;
-  border-style: solid;
+.tech-block {
+  border: 1px solid $green;
   border-radius: 5px;
 
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   height: fit-content;
@@ -31,21 +30,27 @@
 }
 
 
-.tech-name{
+.tech-img {
+  height: 100px;
+  width: 100px;
+}
+
+
+.tech-name {
   font-size: $text-md;
-  font-weight:300;
+  font-weight: 300;
   margin: 10px;
 }
 
 
-.tech-release{
+.tech-release {
   font-size: $text-sm;
   font-weight: bold;
-  margin: 5px 15px 15px 15px;
+  margin: 5px 15px 15px;
 }
 
 
-.tech-description{
+.tech-description {
   width: 130px;
   font-size: $text-sm;
   font-weight: 500;
