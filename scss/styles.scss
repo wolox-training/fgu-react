@@ -1,15 +1,13 @@
-@import 'colors';
+@import 'variables';
 
 .title-section{
-  padding-top: 100px;
-  padding-left: 150px;
-  padding-right: 150px;
+  padding: 100px 150px 0px;
 }
 
 
 .title {
   color: black;
-  font-size: 24px;
+  font-size: $text-lg;
   font-weight: 300;
   position: relative;
 
