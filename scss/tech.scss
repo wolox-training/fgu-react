@@ -9,12 +9,6 @@
 }
 
 
-.tech-img {
-  height: 100px;
-  width: 100px;
-}
-
-
 .tech-block {
   border: 1px solid $green;
   border-radius: 5px;
@@ -34,6 +28,9 @@
   z-index: 0;
 
   &::before {
+    transition: top 0.5s ease;
+    transition: left 0.5s ease;
+
     background-color: $green;
     border-radius: 5px;
     content: "";
@@ -45,6 +42,11 @@
     height: 100%;
     width: 100%;
     z-index: -1;
+  }
+
+  &:hover::before {
+    top: -10px;
+    left: -10px;
   }
 }
 
