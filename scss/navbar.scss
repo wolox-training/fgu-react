@@ -5,7 +5,10 @@
   height: 90px;
   width: 100%;
   box-shadow: 0px 0px 30px $grey;
-  z-index: 10;
+  z-index: 1;
+  top: 0;
+
+  padding: 0px 20px;
 
   display: flex;
   position: fixed;
@@ -17,11 +20,9 @@
 .navbar-img {
   height: 30px;
   width: auto;
-  margin: 0px 20px;
 }
 
 
 .navbar-txt {
   font-size: $text-lg;
-  margin: 0px 20px;
 }
