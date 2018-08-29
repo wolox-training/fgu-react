@@ -34,3 +34,22 @@
   align-self: flex-end;
   margin: 10px 10px 0px;
 }
+
+@media only screen and (max-width: 1024px) {
+
+
+    .footer-slogan {
+      font-size: $text-md;
+    }
+
+
+    .footer-img {
+      height: 45px;
+    }
+
+    .footer-copyright {
+      padding-top: 30px;
+      font-size: 9px;
+      align-self: center;
+    }
+}
