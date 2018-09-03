@@ -25,3 +25,9 @@ export function copy(args) {
 export function reverseMerge(array1, array2) {
   return [...array2, ...array1];
 }
+
+
+export function filterAttribs(args) {
+  var {a, b, ...rest} = args;
+  return rest;
+}
