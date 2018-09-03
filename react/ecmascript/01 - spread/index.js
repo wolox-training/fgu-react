@@ -5,11 +5,11 @@ export function min() {
   return Math.min();
 }*/
 
-export function min(param) {
-  if (isArray(param)) {
-    return Math.min(...param); //Math.min();
+export function min(args) {
+  if (isArray(args)) {
+    return Math.min(...args);
   }
-  return param;
+  return Math.min(...arguments);
 }
 
 export function copy() {
