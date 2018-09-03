@@ -1,9 +1,5 @@
 import { isArray } from './utils';
-/*
-export function min() {
-  isArray();
-  return Math.min();
-}*/
+
 
 export function min(args) {
   if(!!args || args === ''){
@@ -23,4 +19,9 @@ export function copy(args) {
   } else {
       return {...args};
   }
+}
+
+
+export function reverseMerge(array1, array2) {
+  return [...array2, ...array1];
 }
