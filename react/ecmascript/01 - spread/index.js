@@ -18,9 +18,9 @@ export function min(args) {
 
 
 export function copy(args) {
-/*  var aux = [];
-  for(var i = 0; i< args.length; i++){
-    aux.push()
-  }*/
-  return {...args};
+  if(isArray(args)) {
+    return [...args];
+  } else {
+      return {...args};
+  }
 }
