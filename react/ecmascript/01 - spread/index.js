@@ -6,11 +6,16 @@ export function min() {
 }*/
 
 export function min(args) {
-  if (isArray(args)) {
-    return Math.min(...args);
+  if(!!args || args === ''){
+    if (isArray(args)) {
+      return Math.min(...args);
+    }
+    return Math.min(...arguments);
+  } else {
+    return undefined;
   }
-  return Math.min(...arguments);
 }
+
 
 export function copy() {
 
