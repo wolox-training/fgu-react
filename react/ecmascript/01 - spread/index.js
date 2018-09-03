@@ -7,8 +7,7 @@ export function min() {
 
 export function min(param) {
   if (isArray(param)) {
-    // do something
-    return null; //Math.min();
+    return Math.min(...param); //Math.min();
   }
   return param;
 }
