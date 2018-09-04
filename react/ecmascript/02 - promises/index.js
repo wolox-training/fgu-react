@@ -6,14 +6,18 @@ var start = Date.now();
 
 return new Promise(
     function (resolve, reject) {
-      if(time > 400 && time < 600) {
+      if(time >= 400 && time <= 600) {
         setTimeout(function(){
           var timeLapse = Date.now() - start;
           resolve(timeLapse);
         }, time);
-        //setTimeout(resolve(Date.now() - start), time);
       } else {
-        var reason = new Error('This time is too much !');
+        var reason;
+        if(time > 600){
+          reason = new Error('This time is too much !');
+        } else {
+          reason = new Error('This time is too short !');
+        }
         reject(reason);
       }
     }
