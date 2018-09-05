@@ -3,3 +3,4 @@ application.css
 .sass-cache
 scss/*.css
 scss/*.map
+react/ecmascript/node_modules
