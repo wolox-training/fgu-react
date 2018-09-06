@@ -4,3 +4,4 @@ application.css
 scss/*.css
 scss/*.map
 react/ecmascript/node_modules
+react/training/node_modules
