@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import Square from './../Square/index';
 
 export default class Board extends Component {
-  renderSquare() {
-    return <Square />;
+  renderSquare(i) {
+    return <Square value={i} />;
   }
 
   render() {
