@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './styles.scss';
 import Square from './../Square/index';
 
 class Board extends Component {
-  renderSquare(i) {
-    return <Square value={this.props.squares[i]} onClick={() => this.props.onClick(i)} />;
-  }
+  renderSquare = i => <Square value={this.props.squares[i]} onClick={() => this.props.onClick(i)} />;
 
   render() {
     return (
-      <React.Fragment>
+      <Fragment>
         <div className={styles.boardRow}>
           {this.renderSquare(0)}
           {this.renderSquare(1)}
@@ -27,14 +25,14 @@ class Board extends Component {
           {this.renderSquare(7)}
           {this.renderSquare(8)}
         </div>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }
-
-export default Board;
 
 Board.propTypes = {
   squares: PropTypes.string,
   onClick: PropTypes.func
 };
+
+export default Board;

@@ -11,9 +11,9 @@ function Square(props) {
   );
 }
 
-export default Square;
-
 Square.propTypes = {
   value: PropTypes.string,
   onClick: PropTypes.func
 };
+
+export default Square;
