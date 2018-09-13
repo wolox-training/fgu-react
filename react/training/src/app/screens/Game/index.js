@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import styles from './styles.scss';
 import Board from './components/Board/index';
 
 function calculateWinner(squares) {
@@ -13,8 +14,16 @@ function calculateWinner(squares) {
   return null;
 }
 
-export default class Game extends Component {
+class Game extends Component {
   state = { history: [{ squares: Array(9).fill(null) }], stepNumber: 0, xIsNext: true };
+
+  getState(winner) {
+    if (winner) {
+      return `Winner: ${winner}`;
+    }
+    return `Next player: ${this.state.xIsNext ? 'X' : 'O'}`;
+  }
+
   handleClick(i) {
     const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const current = history[history.length - 1];
@@ -41,12 +50,8 @@ export default class Game extends Component {
     });
   }
 
-  render() {
-    const history = this.state.history;
-    const current = history[this.state.stepNumber];
-    const winner = calculateWinner(current.squares);
-
-    const moves = history.map((step, move) => {
+  movements = history =>
+    history.map((step, move) => {
       const desc = move ? `Go to move #${move}` : 'Go to game start';
       return (
         <li key={move}>
@@ -55,18 +60,21 @@ export default class Game extends Component {
       );
     });
 
-    let status;
-    if (winner) {
-      status = `Winner: ${winner}`;
-    } else {
-      status = `Next player: ${this.state.xIsNext ? 'X' : 'O'}`;
-    }
+  render() {
+    const history = this.state.history;
+    const current = history[this.state.stepNumber];
+    const winner = calculateWinner(current.squares);
+
+    const moves = this.movements(history);
+
+    const status = this.getState(winner);
+
     return (
-      <div className="game">
+      <div className={styles.game}>
         <div className="game-board">
           <Board squares={current.squares} onClick={i => this.handleClick(i)} />
         </div>
-        <div className="game-info">
+        <div className={styles.gameInfo}>
           <div>{status}</div>
           <ol>{moves}</ol>
         </div>
@@ -74,3 +82,5 @@ export default class Game extends Component {
     );
   }
 }
+
+export default Game;
