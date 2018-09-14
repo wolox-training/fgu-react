@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 
-import styles from './styles.scss';
 import Square from './../Square/index';
+import styles from './styles.scss';
 
 class Board extends Component {
   renderSquare = i => <Square value={this.props.squares[i]} onClick={() => this.props.onClick(i)} />;

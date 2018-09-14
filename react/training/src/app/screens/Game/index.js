@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import styles from './styles.scss';
 import Board from './components/Board/index';
+import styles from './styles.scss';
 
 class Game extends Component {
   state = { history: [{ squares: Array(9).fill(null) }], stepNumber: 0, xIsNext: true };
