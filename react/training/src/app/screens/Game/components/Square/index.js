@@ -1,7 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Square extends Component {
-  render() {
-    return <button className="square">{/* TODO */}</button>;
-  }
+import styles from './styles.scss';
+
+function Square(props) {
+  return (
+    <button className={styles.square} onClick={props.onClick}>
+      {props.value}
+    </button>
+  );
 }
+
+export default Square;
