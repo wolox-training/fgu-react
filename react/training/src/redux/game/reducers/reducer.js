@@ -13,7 +13,6 @@ export const squareFilled = (state, action) => {
   const history = state.history.slice(0, state.stepNumber + 1);
   const current = history[history.length - 1];
   const squares = current.squares.slice();
-
   switch (action.type) {
     case 'SQUARE_FILLED':
       if (calculateWinner(squares) || squares[action.position]) {

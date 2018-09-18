@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { handleClick, jumpTo } from '../../../redux/game/actions/action';
 
@@ -54,6 +55,14 @@ class Game extends Component {
     );
   }
 }
+
+Game.propTypes = {
+  history: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
+  xIsNext: PropTypes.bool,
+  jumpTo: PropTypes.func,
+  handleClick: PropTypes.func,
+  stepNumber: PropTypes.number
+};
 
 const mapStateToProps = state => ({
   history: state.history,
