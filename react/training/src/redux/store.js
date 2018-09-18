@@ -1,7 +1,5 @@
 import { createStore } from 'redux';
 
-import { squareFilled } from './game/reducers/reducer';
+import { gameReducer } from './game/reducers';
 
-export default function configureStore(initialState) {
-  return createStore(squareFilled, initialState);
-}
+export default createStore(gameReducer);
