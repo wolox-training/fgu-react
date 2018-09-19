@@ -32,14 +32,13 @@ export default function reducer(state = initialState, action) {
         history: history.concat([{ squares }]),
         stepNumber: history.length,
         xIsNext: !state.xIsNext,
-        winner
+        winner: calculateWinner(squares)
       };
     case actionTypes.JUMP_TO:
       return {
         ...state,
         stepNumber: action.position,
-        xIsNext: action.position % 2 === 0,
-        winner
+        xIsNext: action.position % 2 === 0
       };
     default:
       return state;
