@@ -1,5 +1,5 @@
 import { actionTypes } from './actions';
-import calculateWinner from './utils';
+import { calculateWinner } from './utils';
 
 const initialState = {
   history: [{ squares: Array(9).fill(null) }],
