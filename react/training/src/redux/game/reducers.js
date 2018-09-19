@@ -4,7 +4,7 @@ const initialState = {
   history: [{ squares: Array(9).fill(null) }],
   stepNumber: 0,
   xIsNext: true,
-  winner: null
+  winner: ''
 };
 
 const calculateWinner = squares => {
@@ -18,28 +18,30 @@ const calculateWinner = squares => {
   return null;
 };
 
-export const gameReducer = (state = initialState, action) => {
+export default function reducer(state = initialState, action) {
   const history = state.history.slice(0, state.stepNumber + 1);
   const current = history[history.length - 1];
   const squares = current.squares.slice();
+  const winner = calculateWinner(squares);
   switch (action.type) {
     case actionTypes.SQUARE_FILLED:
-      if (calculateWinner(squares) || squares[action.position]) {
-        state.winner = state.xIsNext ? 'O' : 'X';
-        return state;
-      }
+      if (winner || squares[action.position]) return { ...state, winner };
       squares[action.position] = state.xIsNext ? 'X' : 'O';
-      state = {
+      return {
+        ...state,
         history: history.concat([{ squares }]),
         stepNumber: history.length,
-        xIsNext: !state.xIsNext
+        xIsNext: !state.xIsNext,
+        winner
       };
-      return state;
     case actionTypes.JUMP_TO:
-      state.stepNumber = action.position;
-      state.xIsNext = action.position % 2 === 0;
-      return state;
+      return {
+        ...state,
+        stepNumber: action.position,
+        xIsNext: action.position % 2 === 0,
+        winner
+      };
     default:
       return state;
   }
-};
+}
