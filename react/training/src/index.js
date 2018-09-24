@@ -1,19 +1,15 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-import App from './app/components/App/index';
-import Login from './app/components/Login/index';
-
+import Store from './redux/store';
+import App from './app/index';
 import './scss/index.scss';
 
-const Directory = () => (
-  <Router>
-    <Fragment>
-      <Route exact path="/" component={Login} />
-      <Route path="/Game" component={App} />
-    </Fragment>
-  </Router>
+const Application = () => (
+  <Provider store={Store}>
+    <App store={Store} />
+  </Provider>
 );
 
-ReactDOM.render(<Directory />, document.getElementById('root'));
+ReactDOM.render(<Application />, document.getElementById('root'));
