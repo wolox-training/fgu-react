@@ -8,7 +8,7 @@ import './scss/index.scss';
 
 const Application = () => (
   <Provider store={Store}>
-    <App store={Store} />
+    <App />
   </Provider>
 );
 

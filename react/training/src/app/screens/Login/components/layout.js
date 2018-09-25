@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm, Form } from 'redux-form';
 
-import { customInput, required, validEmail, passwordLength } from './index';
+import { required, validEmail, passwordLength } from './utils';
 
-class Form extends Component {
+import { customInput } from './index';
+
+class LoginForm extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <Field
           name="mail"
           component={customInput}
@@ -23,13 +25,11 @@ class Form extends Component {
           validate={[required, passwordLength]}
         />
         <button type="submit">Submit</button>
-      </form>
+      </Form>
     );
   }
 }
 
-const LoginForm = reduxForm({
-  form: 'register'
-})(Form);
-
-export default LoginForm;
+export default reduxForm({
+  form: 'simple'
+})(LoginForm);
