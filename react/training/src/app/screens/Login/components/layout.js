@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Field, reduxForm, Form } from 'redux-form';
+import PropTypes from 'prop-types';
 
 import { required, validEmail, passwordLength } from './utils';
-
-import { customInput } from './index';
+import { CustomInput } from './CustomInput/index';
 
 class LoginForm extends Component {
   render() {
@@ -12,14 +12,14 @@ class LoginForm extends Component {
       <Form onSubmit={handleSubmit}>
         <Field
           name="mail"
-          component={customInput}
+          component={CustomInput}
           type="text"
           label="Email"
           validate={[required, validEmail]}
         />
         <Field
           name="password"
-          component={customInput}
+          component={CustomInput}
           type="password"
           label="Password"
           validate={[required, passwordLength]}
@@ -30,6 +30,10 @@ class LoginForm extends Component {
   }
 }
 
+LoginForm.propTypes = {
+  handleSubmit: PropTypes.func.isRequired
+};
+
 export default reduxForm({
-  form: 'simple'
+  form: 'login'
 })(LoginForm);

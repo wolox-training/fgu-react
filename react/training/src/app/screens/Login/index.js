@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 
 import LoginForm from './components/layout';
 
 class Login extends Component {
   submit = values => {
-    window.alert(JSON.stringify(values, null, 4));
+    return <Redirect to={{ pathname: '/' }} />;
   };
 
   render() {

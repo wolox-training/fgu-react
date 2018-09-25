@@ -21,6 +21,7 @@ class Game extends Component {
     });
 
   render() {
+    window.alert(JSON.stringify(this.props.stepNumber, null, 4));
     const history = this.props.history;
     const current = history[this.props.stepNumber];
     const moves = this.movements(history);
