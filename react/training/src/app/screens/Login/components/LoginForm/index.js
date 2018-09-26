@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { Field, reduxForm, Form } from 'redux-form';
 import PropTypes from 'prop-types';
 
-import { required, validEmail, passwordLength } from './utils';
-import { CustomInput } from './CustomInput/index';
+import { CustomInput } from '../CustomInput/index';
+
+import { required, validEmail } from './utils';
 
 class LoginForm extends Component {
   render() {
@@ -22,7 +23,7 @@ class LoginForm extends Component {
           component={CustomInput}
           type="password"
           label="Password"
-          validate={[required, passwordLength]}
+          validate={[required]}
         />
         <button type="submit">Submit</button>
       </Form>

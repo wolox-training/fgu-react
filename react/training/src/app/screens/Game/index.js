@@ -21,7 +21,6 @@ class Game extends Component {
     });
 
   render() {
-    window.alert(JSON.stringify(this.props.stepNumber, null, 4));
     const history = this.props.history;
     const current = history[this.props.stepNumber];
     const moves = this.movements(history);
@@ -50,10 +49,10 @@ Game.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  history: state.history,
-  stepNumber: state.stepNumber,
-  xIsNext: state.xIsNext,
-  winner: state.winner
+  history: state.game.history,
+  stepNumber: state.game.stepNumber,
+  xIsNext: state.game.xIsNext,
+  winner: state.game.winner
 });
 
 const mapDispatchToProps = dispatch => ({

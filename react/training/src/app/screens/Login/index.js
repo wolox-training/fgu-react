@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 
-import LoginForm from './components/layout';
+import LoginForm from './components/LoginForm/index';
 
 class Login extends Component {
-  submit = values => {
-    return <Redirect to={{ pathname: '/' }} />;
+  state = {
+    isLoggedIn: false
+  };
+  handleSubmit = values => {
+    this.setState({ isLoggedIn: true });
   };
 
   render() {
-    return <LoginForm onSubmit={this.submit} />;
+    return !this.state.isLoggedIn ? <LoginForm onSubmit={this.handleSubmit} /> : <Redirect to="/Game" />;
   }
 }
 
