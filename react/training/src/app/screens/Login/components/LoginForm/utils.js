@@ -1,4 +1,4 @@
-import { PASSWORD_LENGTH_ERROR } from 'constants';
+import { PASSWORD_LENGTH_ERROR } from './constants';
 
 export const required = value => (value ? undefined : 'Value is required');
 
