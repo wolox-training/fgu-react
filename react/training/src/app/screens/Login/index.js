@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -9,8 +9,12 @@ import LoginForm from './components/LoginForm/index';
 
 class Login extends Component {
   render() {
-    return !this.props.userAuthenticated ? (
-      <LoginForm onSubmit={this.props.handleSubmit} />
+    const { userAuthenticated, error } = this.props;
+    return !userAuthenticated ? (
+      <Fragment>
+        <span style={{ color: 'red' }}>{error}</span>
+        <LoginForm onSubmit={this.props.handleSubmit} />
+      </Fragment>
     ) : (
       <Redirect to="/Game" />
     );
@@ -19,11 +23,13 @@ class Login extends Component {
 
 Login.propTypes = {
   userAuthenticated: PropTypes.bool,
-  handleSubmit: PropTypes.func
+  handleSubmit: PropTypes.func.isRequired,
+  error: PropTypes.string
 };
 
 const mapStateToProps = state => ({
-  userAuthenticated: state.login.userAuthenticated
+  userAuthenticated: state.login.userAuthenticated,
+  error: state.login.error
 });
 
 const mapDispatchToProps = dispatch => ({
