@@ -12,8 +12,8 @@ class Login extends Component {
     return !this.props.userAuthenticated ? (
       <LoginForm onSubmit={this.props.handleSubmit} />
     ) : (
-        <Redirect to="/Game" />
-      );
+      <Redirect to="/Game" />
+    );
   }
 }
 
