@@ -1,7 +1,9 @@
 import { create } from 'apisauce';
 
+import { BASE_URL } from './constants';
+
 const api = create({
-  baseURL: 'http://localhost:3000/',
+  baseURL: BASE_URL,
   timeout: 5000
 });
 
