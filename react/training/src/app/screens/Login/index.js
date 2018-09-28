@@ -8,11 +8,11 @@ import { loginActions } from '../../../redux/login/actions';
 import LoginForm from './components/LoginForm/index';
 
 function Login(props) {
-  const { userAuthenticated, error } = props;
+  const { userAuthenticated, handleSubmit, error } = props;
   return !userAuthenticated ? (
     <Fragment>
       <span style={{ color: 'red' }}>{error}</span>
-      <LoginForm onSubmit={props.handleSubmit} />
+      <LoginForm onSubmit={handleSubmit} />
     </Fragment>
   ) : (
     <Redirect to="/Game" />

@@ -1,5 +1,7 @@
 import { getByEmail } from '../../services/loginService';
 
+import { userIsOK } from './utils';
+
 export const actionTypes = {
   LOGIN_SUCCESS: 'LOGIN_SUCCESS',
   LOGIN_FAILURE: 'LOGIN_FAILURE',
@@ -8,10 +10,10 @@ export const actionTypes = {
 
 export const loginActions = {
   handleSubmit: userLogged => async dispatch => {
-    dispatch({ type: actionTypes.LOGIN_REQUEST, payload: true });
+    dispatch({ type: actionTypes.LOGIN_REQUEST });
     const response = await getByEmail(userLogged);
-    if (response.data.length > 0 && response.data[0].password === userLogged.password) {
-      dispatch({ type: actionTypes.LOGIN_SUCCESS, payload: true });
+    if (userIsOK(response, userLogged)) {
+      dispatch({ type: actionTypes.LOGIN_SUCCESS, payload: response.data[0].token });
     } else {
       dispatch({
         type: actionTypes.LOGIN_FAILURE,

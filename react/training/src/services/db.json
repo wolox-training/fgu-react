@@ -2,15 +2,18 @@
   "users": [
     {
       "email": "fede@wolox.com.ar",
-      "password": "12345678"
+      "password": "12345678",
+      "token": "fedeG"
     },
     {
       "email": "hola@wolox.com.ar",
-      "password": "12345678"
+      "password": "12345678",
+      "token": "hola"
     },
     {
       "email": "harry@wolox.ar",
-      "password": "12345678"
+      "password": "12345678",
+      "token": "harry"
     }
   ]
 }
