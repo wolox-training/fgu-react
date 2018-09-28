@@ -13,15 +13,6 @@ const reducers = {
 
 const appReducer = combineReducers(reducers);
 
-const middlewares = [];
-const enhancers = [];
-
-/* ------------- Thunk Middleware ------------- */
-middlewares.push(thunk);
-
-/* ------------- Assemble Middleware ------------- */
-enhancers.push(applyMiddleware(...middlewares));
-
 // eslint-disable-next-line no-underscore-dangle
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

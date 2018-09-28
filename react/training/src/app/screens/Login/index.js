@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -7,18 +7,16 @@ import { loginActions } from '../../../redux/login/actions';
 
 import LoginForm from './components/LoginForm/index';
 
-class Login extends Component {
-  render() {
-    const { userAuthenticated, error } = this.props;
-    return !userAuthenticated ? (
-      <Fragment>
-        <span style={{ color: 'red' }}>{error}</span>
-        <LoginForm onSubmit={this.props.handleSubmit} />
-      </Fragment>
-    ) : (
-      <Redirect to="/Game" />
-    );
-  }
+function Login(props) {
+  const { userAuthenticated, error } = props;
+  return !userAuthenticated ? (
+    <Fragment>
+      <span style={{ color: 'red' }}>{error}</span>
+      <LoginForm onSubmit={props.handleSubmit} />
+    </Fragment>
+  ) : (
+    <Redirect to="/Game" />
+  );
 }
 
 Login.propTypes = {

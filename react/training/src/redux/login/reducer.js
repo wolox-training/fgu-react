@@ -8,11 +8,11 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case actionTypes.LOG_REQUEST:
+    case actionTypes.LOGIN_REQUEST:
       return { ...state, isLoading: action.payload };
-    case actionTypes.LOG_SUCCESS:
+    case actionTypes.LOGIN_SUCCESS:
       return { ...state, userAuthenticated: action.payload };
-    case actionTypes.LOG_FAILURE:
+    case actionTypes.LOGIN_FAILURE:
       return { ...state, error: action.payload };
     default:
       return state;
