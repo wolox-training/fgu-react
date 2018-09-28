@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { gameActions } from '../../../redux/game/actions';
+import Topbar from '../../components/Topbar/index';
 
 import Board from './components/Board/index';
 import styles from './styles.scss';
@@ -26,15 +27,18 @@ class Game extends Component {
     const moves = this.movements(history);
     const status = this.getState(this.props.winner);
     return (
-      <div className={styles.game}>
-        <div className="game-board">
-          <Board squares={current.squares} onClick={this.props.handleClick} />
+      <Fragment>
+        <Topbar />
+        <div className={styles.game}>
+          <div className="game-board">
+            <Board squares={current.squares} onClick={this.props.handleClick} />
+          </div>
+          <div className={styles.gameInfo}>
+            <div>{status}</div>
+            <ol>{moves}</ol>
+          </div>
         </div>
-        <div className={styles.gameInfo}>
-          <div>{status}</div>
-          <ol>{moves}</ol>
-        </div>
-      </div>
+      </Fragment>
     );
   }
 }

@@ -5,7 +5,8 @@ import { userIsOK } from './utils';
 export const actionTypes = {
   LOGIN_SUCCESS: 'LOGIN_SUCCESS',
   LOGIN_FAILURE: 'LOGIN_FAILURE',
-  LOGIN_REQUEST: 'LOGIN_REQUEST'
+  LOGIN_REQUEST: 'LOGIN_REQUEST',
+  LOGOUT: 'LOGOUT'
 };
 
 export const loginActions = {
@@ -21,7 +22,8 @@ export const loginActions = {
           response.data.length > 0 ? 'Error: The password is not correct' : 'Error: Invalid User E-mail'
       });
     }
-  }
+  },
+  logOut: () => ({ type: actionTypes.LOGOUT })
 };
 
 export default loginActions;
