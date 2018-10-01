@@ -14,7 +14,7 @@ function Topbar() {
       <Link to="/Profile" className={styles.link}>
         Profile
       </Link>
-      <LogOutButton className={styles.link} />
+      <LogOutButton />
     </div>
   );
 }

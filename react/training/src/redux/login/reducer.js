@@ -12,7 +12,7 @@ export default function reducer(state = initialState, action) {
     case actionTypes.LOGIN_REQUEST:
       return { ...state, isLoading: true };
     case actionTypes.LOGIN_SUCCESS:
-      return { ...state, userAuthenticated: true, isLoading: false, error: '', token: action.payload };
+      return { ...state, userAuthenticated: true, isLoading: false, token: action.payload };
     case actionTypes.LOGIN_FAILURE:
       return { ...state, error: action.payload, isLoading: false };
     case actionTypes.LOGOUT:

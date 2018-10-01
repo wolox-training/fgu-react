@@ -4,11 +4,15 @@ import PropTypes from 'prop-types';
 
 import { loginActions } from '../../../redux/login/actions';
 
+import styles from './styles.scss';
+
 function LogOutButton(props) {
   const { logOut } = props;
   return (
     <Fragment>
-      <button onClick={logOut}>Log Out</button>
+      <button className={styles.button} onClick={logOut}>
+        Log Out
+      </button>
     </Fragment>
   );
 }

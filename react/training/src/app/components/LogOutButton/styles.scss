@@ -1,18 +1,11 @@
-.topBar {
-  display: flex;
-  justify-content: flex-start;
-  padding: 5px 40px;
-  background-color: #00ADEE;
-  margin: 0px 0px 20px;
-}
-
-.link {
+.button {
   background: #1F8BCA;
+  font-size: 20px;
   margin: 10px;
   padding: 10px 50px;
   border-radius: 5px;
+  border-width: 0px;
   font-family: Arial;
-  font-size: 20px;
   color: black;
   font-weight: 300;
   text-decoration: none;
